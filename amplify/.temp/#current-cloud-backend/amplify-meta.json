@@ -1,0 +1,47 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ecommercecloudcomput-staging-135816-authRole",
+      "UnauthRoleArn": "arn:aws:iam::374557574699:role/amplify-ecommercecloudcomput-staging-135816-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::374557574699:role/amplify-ecommercecloudcomput-staging-135816-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ecommercecloudcomput-staging-135816-deployment",
+      "UnauthRoleName": "amplify-ecommercecloudcomput-staging-135816-unauthRole",
+      "StackName": "amplify-ecommercecloudcomput-staging-135816",
+      "StackId": "arn:aws:cloudformation:us-east-1:374557574699:stack/amplify-ecommercecloudcomput-staging-135816/361bc7d0-6cc9-11ed-8199-0ae3810f0c5b",
+      "AmplifyAppId": "d1c187f3vp8dtp"
+    }
+  },
+  "api": {
+    "EcommerceCloudComputing": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "tf7ngxipajcl5bwg4u3kwhicne",
+        "GraphQLAPIEndpointOutput": "https://wtmfywjzzvdjjg3wknstorgffm.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-ffvpnc54lbcqlg3wojcxpmrh5a"
+      },
+      "lastPushTimeStamp": "2022-11-25T17:44:05.225Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ecommercecloudcomput-staging-135816-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiEcommerceCloudComputing"
+      },
+      "lastPushDirHash": "p+FU0FpdswvXwa2abZmI0U7adZ0="
+    }
+  }
+}
