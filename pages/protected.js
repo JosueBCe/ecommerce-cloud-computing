@@ -1,4 +1,12 @@
 import { withSSRContext } from "aws-amplify"
+import {
+    Table,
+    TableCell,
+    TableBody,
+    TableHead,
+    TableRow,
+  } from '@aws-amplify/ui-react';
+  
 
 function Protected({authenticated, username}) {
     if(!authenticated){
@@ -9,9 +17,36 @@ function Protected({authenticated, username}) {
         )
     } else {
     return (
-        <div>
-        <h2>You have private Access {username}</h2>
-    </div>
+        <Table
+        caption={"This is a caption for the table component"}
+        highlightOnHover={true}
+
+    >
+        <TableHead>
+            <TableRow>
+                <TableCell as="th">Citrus</TableCell>
+                <TableCell as="th">Stone Fruit</TableCell>
+                <TableCell as="th">Berry</TableCell>
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            <TableRow>
+                <TableCell>Orange</TableCell>
+                <TableCell>Nectarine</TableCell>
+                <TableCell>Raspberry</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>Grapefruit</TableCell>
+                <TableCell>Apricot</TableCell>
+                <TableCell>Blueberry</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>Lime</TableCell>
+                <TableCell>Peach</TableCell>
+                <TableCell>Strawberry</TableCell>
+            </TableRow>
+        </TableBody>
+    </Table>
     )
 }
 
@@ -25,7 +60,8 @@ export async function getServerSideProps(context){
         return {
             props: {
                 authenticated: true,
-                username: user.username
+                username: user.username,
+  
             }
         }
     } catch(err){
