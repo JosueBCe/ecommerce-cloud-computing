@@ -7,7 +7,7 @@
 import * as React from "react";
 import { Product } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { GridProps, SwitchFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
 export declare type ValidationResponse = {
     hasError: boolean;
     errorMessage?: string;
@@ -15,14 +15,35 @@ export declare type ValidationResponse = {
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type ProductUpdateFormInputValues = {
     Product?: string;
+    Price?: number;
+    Descrip?: string;
+    Photo?: string;
+    Deal?: boolean;
+    Category?: string;
+    Saved?: boolean;
+    Commentaries?: string;
 };
 export declare type ProductUpdateFormValidationValues = {
     Product?: ValidationFunction<string>;
+    Price?: ValidationFunction<number>;
+    Descrip?: ValidationFunction<string>;
+    Photo?: ValidationFunction<string>;
+    Deal?: ValidationFunction<boolean>;
+    Category?: ValidationFunction<string>;
+    Saved?: ValidationFunction<boolean>;
+    Commentaries?: ValidationFunction<string>;
 };
 export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ProductUpdateFormOverridesProps = {
     ProductUpdateFormGrid?: FormProps<GridProps>;
     Product?: FormProps<TextFieldProps>;
+    Price?: FormProps<TextFieldProps>;
+    Descrip?: FormProps<TextFieldProps>;
+    Photo?: FormProps<TextFieldProps>;
+    Deal?: FormProps<SwitchFieldProps>;
+    Category?: FormProps<TextFieldProps>;
+    Saved?: FormProps<SwitchFieldProps>;
+    Commentaries?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ProductUpdateFormProps = React.PropsWithChildren<{
     overrides?: ProductUpdateFormOverridesProps | undefined | null;

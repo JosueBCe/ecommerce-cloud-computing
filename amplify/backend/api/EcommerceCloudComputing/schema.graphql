@@ -1,0 +1,12 @@
+type Product @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Product: String!
+  Price: Float!
+  Descrip: String!
+  Photo: AWSURL!
+  Deal: Boolean
+  Category: String
+  Saved: Boolean
+  Commentaries: String
+}
+ 

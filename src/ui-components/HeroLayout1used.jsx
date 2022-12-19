@@ -6,54 +6,10 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  getOverrideProps,
-  getOverridesFromVariants,
-  mergeVariantsAndOverrides,
-} from "@aws-amplify/ui-react/internal";
+import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
-export default function HeroLayout1(props) {
-  const { overrides: overridesProp, ...rest } = props;
-  const variants = [
-    {
-      overrides: {
-        "LOREM IPSUM": {},
-        "Ut enim ad minim veniam quis nostrud": {},
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.":
-          {},
-        Message: {},
-        Button: {},
-        HeroMessage: {},
-        Left: {},
-        image: {},
-        Right: {},
-        HeroLayout1: {},
-      },
-      variantValues: { mode: "Light" },
-    },
-    {
-      overrides: {
-        "LOREM IPSUM": { color: "rgba(255,255,255,1)" },
-        "Ut enim ad minim veniam quis nostrud": {
-          color: "rgba(255,255,255,1)",
-        },
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.":
-          { color: "rgba(255,255,255,1)" },
-        Message: {},
-        Button: {},
-        HeroMessage: {},
-        Left: { backgroundColor: "rgba(20,96,108,1)" },
-        image: { width: "unset", alignSelf: "stretch" },
-        Right: {},
-        HeroLayout1: {},
-      },
-      variantValues: { mode: "Dark" },
-    },
-  ];
-  const overrides = mergeVariantsAndOverrides(
-    getOverridesFromVariants(variants, props),
-    overridesProp || {}
-  );
+export default function HeroLayout1used(props) {
+  const { overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -64,9 +20,8 @@ export default function HeroLayout1(props) {
       alignItems="center"
       position="relative"
       padding="0px 0px 0px 0px"
-      display="flex"
       {...rest}
-      {...getOverrideProps(overrides, "HeroLayout1")}
+      {...getOverrideProps(overrides, "HeroLayout1used")}
     >
       <Flex
         gap="10px"
@@ -82,8 +37,7 @@ export default function HeroLayout1(props) {
         alignSelf="stretch"
         position="relative"
         padding="120px 120px 120px 120px"
-        backgroundColor="rgba(255,245,230,1)"
-        display="flex"
+        backgroundColor="rgba(114,160,167,1)"
         {...getOverrideProps(overrides, "Left")}
       >
         <Flex
@@ -97,14 +51,13 @@ export default function HeroLayout1(props) {
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
-          display="flex"
           {...getOverrideProps(overrides, "HeroMessage")}
         >
           <Text
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="700"
-            color="rgba(13,26,38,1)"
+            color="rgba(12,58,64,1)"
             lineHeight="24px"
             textAlign="center"
             display="block"
@@ -133,14 +86,13 @@ export default function HeroLayout1(props) {
             alignSelf="stretch"
             position="relative"
             padding="0px 0px 0px 0px"
-            display="flex"
             {...getOverrideProps(overrides, "Message")}
           >
             <Text
               fontFamily="Inter"
               fontSize="24px"
               fontWeight="600"
-              color="rgba(13,26,38,1)"
+              color="rgba(255,255,255,1)"
               lineHeight="30px"
               textAlign="center"
               display="block"
@@ -165,7 +117,7 @@ export default function HeroLayout1(props) {
               fontFamily="Inter"
               fontSize="16px"
               fontWeight="400"
-              color="rgba(13,26,38,1)"
+              color="rgba(255,255,255,1)"
               lineHeight="24px"
               textAlign="center"
               display="block"
@@ -212,11 +164,10 @@ export default function HeroLayout1(props) {
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
-        display="flex"
         {...getOverrideProps(overrides, "Right")}
       >
         <Image
-          width="720px"
+          width="unset"
           height="unset"
           display="block"
           gap="unset"
@@ -225,6 +176,7 @@ export default function HeroLayout1(props) {
           grow="1"
           shrink="1"
           basis="0"
+          alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"

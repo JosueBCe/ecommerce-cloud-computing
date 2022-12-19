@@ -13,8 +13,8 @@ export default function HeroLayout2(props) {
   const { overrides, ...rest } = props;
   return (
     <View
-      width="1440px"
-      height="858px"
+      width="1012px"
+      height="693px"
       display="block"
       gap="unset"
       alignItems="unset"
@@ -44,8 +44,8 @@ export default function HeroLayout2(props) {
         display="flex"
         gap="10px"
         direction="column"
-        width="1440px"
-        height="858px"
+        width="1012px"
+        height="693px"
         justifyContent="center"
         alignItems="center"
         overflow="hidden"

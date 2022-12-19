@@ -1,26 +1,24 @@
-import Head from 'next/head'
-import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
-import { HeroLayout1 } from '../src/ui-components'
-import { NavBar } from '../src/ui-components'
+import { ActionCard, Features2x2, HeroLayout2, MarketingPricing } from '../src/ui-components'
+import { NavBar2 } from '../src/ui-components'
 import { CommentCard } from '../src/ui-components'
-export default function Home() {
+import { Footer } from '../src/ui-components'
+import Descripting from '../src/ui-components/Descripting'
+import { withAuthenticator } from '@aws-amplify/ui-react'
+
+function Home({signOut, user}) {
   return (
     <>
-    <div>
-    <NavBar/>
-    </div>
-    <div className={styles.menu}>
-
-      <HeroLayout1 className={styles.grid}/>  
-      <CommentCard className={styles.container}/>
-    </div>
+    <h1>Hello {user.username}</h1>
+    <button onClick={signOut}>Sign Out</button>
     </>
   )
 }
 
+export default withAuthenticator(Home)
 
-
+/* https://coolors.co/palette/001524-15616d-ffecd1-ff7d00-78290f Pallet of colors  */
 
 /* 
 

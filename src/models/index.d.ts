@@ -12,7 +12,14 @@ type EagerProduct = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly Product?: string | null;
+  readonly Product: string;
+  readonly Price: number;
+  readonly Descrip: string;
+  readonly Photo: string;
+  readonly Deal?: boolean | null;
+  readonly Category?: string | null;
+  readonly Saved?: boolean | null;
+  readonly Commentaries?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -23,7 +30,14 @@ type LazyProduct = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly Product?: string | null;
+  readonly Product: string;
+  readonly Price: number;
+  readonly Descrip: string;
+  readonly Photo: string;
+  readonly Deal?: boolean | null;
+  readonly Category?: string | null;
+  readonly Saved?: boolean | null;
+  readonly Commentaries?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -32,34 +46,4 @@ export declare type Product = LazyLoading extends LazyLoadingDisabled ? EagerPro
 
 export declare const Product: (new (init: ModelInit<Product>) => Product) & {
   copyOf(source: Product, mutator: (draft: MutableModel<Product>) => MutableModel<Product> | void): Product;
-}
-
-type EagerDescription = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Description, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
-  readonly id: string;
-  readonly product?: string | null;
-  readonly description?: string | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-type LazyDescription = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Description, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
-  readonly id: string;
-  readonly product?: string | null;
-  readonly description?: string | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-export declare type Description = LazyLoading extends LazyLoadingDisabled ? EagerDescription : LazyDescription
-
-export declare const Description: (new (init: ModelInit<Description>) => Description) & {
-  copyOf(source: Description, mutator: (draft: MutableModel<Description>) => MutableModel<Description> | void): Description;
 }
